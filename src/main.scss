@@ -1,0 +1,23 @@
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$font-family: "Arial", sans-serif;
+
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  @include flex-container;
+}
+.navbar {
+  background-color: $primary-color;
+
+  .nav-item {
+    color: white;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

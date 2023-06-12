@@ -1,0 +1,12 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+.home-page .carousel .slide {
+  width: 100%;
+  height: 300px;
+}
+.home-page .carousel .slide img {
+  width: auto;
+  height: auto;
+}/*# sourceMappingURL=HomePage.css.map */

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: #3498db;
+}
+.navbar .nav-item {
+  color: white;
+}
+.navbar .nav-item:hover {
+  color: #2c3e50;
+}/*# sourceMappingURL=main.css.map */
