@@ -1,18 +1,26 @@
 import React from "react";
-import AppRoutes from "./routes/AppRoutes";
-import "./main.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import Header from "./components/Header";
-// import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./shared/components/Navbar";
+import Footer from "./shared/components/Footer";
+import Home from "./user/pages/Home";
+import Products from "./user/pages/Products";
+import Cart from "./user/pages/Cart";
+import Admin from "./admin/pages/Admin";
+import Profile from "./user/pages/Profile";
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <AppRoutes />
-      {/* <Footer /> */}
-    </>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/products' component={Products} />
+        <Route path='/cart' component={Cart} />
+        <Route path='/admin' component={Admin} />
+        <Route path='/profile' component={Profile} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 };
 

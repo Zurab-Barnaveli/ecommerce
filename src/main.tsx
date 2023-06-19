@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./main.scss";
-import { BrowserRouter as Router } from "react-router-dom";
+// Example: src/main.tsx
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./i18n"; // <-- Importing the i18n configuration here
+
+ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
