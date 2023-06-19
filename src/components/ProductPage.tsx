@@ -29,14 +29,14 @@ const ProductPage = () => {
   return (
     <div>
       <h1>{product.title}</h1>
+      <p>
+        <img src={product.images[product.id]} />
+      </p>
       <p>{product.description}</p>
       <p>{product.price}</p>
       <p>{product.category}</p>
       <p>{product.brand}</p>
       <p>{product.rating}</p>
-      <p>
-        <img src={product.images[product.id]} />
-      </p>
       <button onClick={() => addItem(product)}>Add to Cart</button>
     </div>
   );

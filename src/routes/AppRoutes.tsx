@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import HomePage from "../components/HomePage";
 import ProductPage from "../components/ProductPage";
@@ -12,19 +12,17 @@ import ProductListPage from "../components/ProductListPage";
 
 const AppRoutes = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/product/:id' element={<ProductPage />} />
-        <Route path='/cart' element={<CartPage />} />
-        <Route path='/admin' element={<AdminPage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/profile' element={<UserprofilePage />} />
-        <Route path='/contact' element={<ContactUsPage />} />
-        <Route path='/category/:category' element={<ProductListPage />} />
-        <Route path='/search/:searchTerm' element={<ProductListPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/product/:id' element={<ProductPage />} />
+      <Route path='/cart' element={<CartPage />} />
+      <Route path='/admin' element={<AdminPage />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/profile' element={<UserprofilePage />} />
+      <Route path='/contact' element={<ContactUsPage />} />
+      <Route path='/category/:category' element={<ProductListPage />} />
+      <Route path='/search/:searchTerm' element={<ProductListPage />} />
+    </Routes>
   );
 };
 

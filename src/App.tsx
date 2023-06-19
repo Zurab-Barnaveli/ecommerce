@@ -8,11 +8,11 @@ import Header from "./components/Header";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
       <AppRoutes />
       {/* <Footer /> */}
-    </div>
+    </>
   );
 };
 

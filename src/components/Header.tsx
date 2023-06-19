@@ -5,14 +5,14 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  const handleSearch = (event) => {
+  const handleSearch = (event: any) => {
     event.preventDefault();
     navigate(`/search/${searchTerm}`);
   };
 
   return (
-    <header>
-      <form onSubmit={handleSearch} className='my-4'>
+    <header style={{ backgroundColor: "black" }}>
+      <form onSubmit={handleSearch}>
         <div className='input-group'>
           <input
             type='text'

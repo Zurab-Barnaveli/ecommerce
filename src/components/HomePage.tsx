@@ -10,6 +10,34 @@ const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
 
+  const carouselProducts = [
+    {
+      id: 1,
+      title: "Product 1",
+      image: "https://img.zoommer.ge/zoommer-images/thumbs/0192904.png",
+    },
+    {
+      id: 2,
+      title: "Product 2",
+      image: "https://img.zoommer.ge/zoommer-images/thumbs/0192756.png",
+    },
+    {
+      id: 3,
+      title: "Product 3",
+      image: "https://img.zoommer.ge/zoommer-images/thumbs/0192906.png",
+    },
+    {
+      id: 4,
+      title: "Product 4",
+      image: "https://img.zoommer.ge/zoommer-images/thumbs/0193564.png",
+    },
+    {
+      id: 5,
+      title: "Product 5",
+      image: "https://img.zoommer.ge/zoommer-images/thumbs/0193562.png",
+    },
+  ];
+
   const fetchProducts = async () => {
     try {
       const response = await axios.post("http://localhost:8080/products", {
@@ -33,22 +61,26 @@ const HomePage = () => {
   return (
     <div className='home-page container'>
       <Carousel autoPlay interval={2000} infiniteLoop>
-        {products.slice(0, 5).map((product) => (
+        {carouselProducts.map((product) => (
           <Link to={`/product/${product.id}`} key={product.id}>
             <div>
-              <img src={product.images[0]} alt={product.title} />
-              <p className='legend'>{product.title}</p>
+              <img src={product.image} alt={product.title} />
             </div>
           </Link>
         ))}
       </Carousel>
 
       <section>
-        <h2>Categories</h2>
-        <div>
+        <div className='categories'>
+          <div className='navigation'>
+            <img src='src\img\options-lines.png' />
+            <h2>Navigation</h2>
+          </div>
           {categories.map((brand) => (
             <Link to={`/brand/${brand}`} key={brand}>
-              <button>{brand}</button>
+              <div className='card'>
+                <button>{brand}</button>
+              </div>
             </Link>
           ))}
         </div>
@@ -91,8 +123,6 @@ const HomePage = () => {
           </button>
         </div>
       </section>
-
-      <footer></footer>
     </div>
   );
 };
