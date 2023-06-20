@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./shared/components/Navbar";
 import Footer from "./shared/components/Footer";
-import Home from "./user/pages/Home";
 import Products from "./user/pages/Products";
 import Cart from "./user/pages/Cart";
 import Admin from "./admin/pages/Admin";
