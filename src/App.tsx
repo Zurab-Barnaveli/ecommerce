@@ -1,27 +1,24 @@
+// src/App.tsx
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CartProvider } from "./shared/CartContext";
-import Navbar from "./shared/components/Navbar";
-import Footer from "./shared/components/Footer";
-import Products from "./user/pages/Products";
-import Cart from "./user/pages/Cart";
-import Admin from "./admin/pages/Admin";
-import Profile from "./user/pages/Profile";
 import HomePage from "./user/pages/HomePage";
+import ProductDetailsPage from "./user/pages/ProductDetailsPage";
+import CartPage from "./user/pages/CartPage";
+import AdminPage from "./admin/pages/AdminPage";
 
 const App = () => {
   return (
     <CartProvider>
       <Router>
-        <Navbar />
         <Switch>
           <Route path='/' exact component={HomePage} />
-          <Route path='/products' component={Products} />
-          <Route path='/cart' component={Cart} />
-          <Route path='/admin' component={Admin} />
-          <Route path='/profile' component={Profile} />
+          <Route path='/product/:id' component={ProductDetailsPage} />
+          <Route path='/cart' component={CartPage} />
+          <Route path='/admin' component={AdminPage} />
+          {/* Add more routes as needed */}
         </Switch>
-        <Footer />
       </Router>
     </CartProvider>
   );
